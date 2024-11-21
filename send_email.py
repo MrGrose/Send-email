@@ -8,7 +8,7 @@ FROM_LOGIN_MAIL = getenv('FROM_LOGIN_MAIL')
 PASSWORD_LOGIN_MAIL = getenv('PASSWORD_LOGIN_MAIL')
 TO_LOGIN_MAIL = getenv('TO_LOGIN_MAIL')
 site_name = 'https://dvmn.org/profession-ref-program/grachev.ro/ndYAO/'
-friend_name = 'Игорь'
+friend_name = 'Friend'
 sender_name = 'Mr.Grose'
 letter_template = """
 Привет, {friend_name}! {my_name} приглашает тебя на сайт {website}!
@@ -32,8 +32,8 @@ letter_template = """
 new_letter_template = letter_template.format(website=site_name, friend_name=friend_name, my_name=sender_name)
 
 letter = f"""\
-From: rs.grose@yandex.ru
-To: sifosha2010@yandex.ru
+From: {FROM_LOGIN_MAIL}
+To: {TO_LOGIN_MAIL}
 Subject: Приглашение!
 Content-Type: text/plain; charset="UTF-8";
 {new_letter_template}
